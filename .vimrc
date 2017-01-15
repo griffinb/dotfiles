@@ -1,7 +1,7 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-colorscheme solarized
+colorscheme quantum
 
 set number
 set ruler
@@ -14,6 +14,7 @@ set nohidden
 set list listchars=tab:»·,trail:·
 set backspace=indent,eol,start
 
+set term=screen-256color
 " Highlight all search results
 set hlsearch
 hi Search   cterm=BOLD  ctermfg=NONE    ctermbg=blue
