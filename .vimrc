@@ -1,7 +1,7 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-colorscheme quantum
+colorscheme predawn
 
 set number
 set ruler
@@ -22,6 +22,12 @@ hi IncSearch    cterm=BOLD  ctermfg=NONE    ctermbg=red
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+" copy to buffer
+vmap <C-c> :w! ~/.vimbuffer<CR>
+nmap <C-c> :.w! ~/.vimbuffer<CR>
+" paste from buffer
+map <C-p> :r ~/.vimbuffer<CR>
 
 " Some files need to have a tab width of 2:
 autocmd FileType javascript,json,yaml,html setlocal tabstop=2
