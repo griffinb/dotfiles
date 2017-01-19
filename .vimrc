@@ -1,8 +1,11 @@
 execute pathogen#infect()
-syntax on
 filetype plugin indent on
+syntax enable
 colorscheme predawn
 
+set laststatus=2
+set statusline+=%F
+set updatetime=250
 set number
 set ruler
 set expandtab
