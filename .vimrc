@@ -1,7 +1,7 @@
 execute pathogen#infect()
 filetype plugin indent on
 syntax enable
-colorscheme predawn
+colorscheme onedark
 
 set laststatus=2
 set statusline+=%F
@@ -51,6 +51,9 @@ autocmd FileType gitcommit set textwidth=72
 " markdown settings
 autocmd BufRead,BufNewFile *.md :set syntax=markdown
 
+
+au FocusGained,BufEnter * :silent! checktime
+au FocusLost,WinLeave * :silent! w
 
 " Trim trailing whitespace:
 function TrimWhiteSpace()
