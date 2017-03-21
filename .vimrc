@@ -1,26 +1,57 @@
 execute pathogen#infect()
-filetype plugin indent on
 syntax enable
-colorscheme onedark
+set background=dark
+colorscheme material-theme
+filetype plugin indent on
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
+let python_highlight_all=1
+
+" set colorcolumn=80
+set nofoldenable    " disable folding
 set laststatus=2
 set statusline+=%F
 set updatetime=250
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+hi CursorLineNr guifg=#050505
 set number
 set ruler
 set expandtab
-set tabstop=2
-set shiftwidth=2
 set incsearch
 set cursorline
+set clipboard=unnamed
 set nohidden
 set list listchars=tab:»·,trail:·
 set backspace=indent,eol,start
 
 set term=screen-256color
+
+" Add proper PEP8 indentation
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
 " Highlight all search results
 set hlsearch
-hi Search   cterm=BOLD  ctermfg=NONE    ctermbg=blue
+hi Search   cterm=BOLD  ctermfg=NONE    ctermbg=white
 hi IncSearch    cterm=BOLD  ctermfg=NONE    ctermbg=red
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
@@ -29,17 +60,9 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " copy to buffer
 vmap <C-c> :w! ~/.vimbuffer<CR>
 nmap <C-c> :.w! ~/.vimbuffer<CR>
+
 " paste from buffer
 map <C-p> :r ~/.vimbuffer<CR>
-
-" Some files need to have a tab width of 2:
-autocmd FileType javascript,json,yaml,html setlocal tabstop=2
-autocmd FileType javascript,json,yaml,html setlocal shiftwidth=2
-" Display an error in .js files as well if the line grows beyond 79 chars.
-autocmd BufRead,BufNewFile *.js :match ErrorMsg '\%>79v.\+'
-autocmd BufRead,BufNewFile *.js :match ErrorMsg '\%>79v.\+'
-" set javascript syntax highlighting for .json files
-autocmd BufRead,BufNewFile *.json :setf javascript
 
 " git settings
 "
@@ -50,7 +73,6 @@ autocmd FileType gitcommit set textwidth=72
 
 " markdown settings
 autocmd BufRead,BufNewFile *.md :set syntax=markdown
-
 
 au FocusGained,BufEnter * :silent! checktime
 au FocusLost,WinLeave * :silent! w
