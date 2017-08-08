@@ -1,0 +1,105 @@
+[global_config]
+  borderless = True
+  enabled_plugins = CustomCommandsMenu, LaunchpadCodeURLHandler, APTURLHandler
+  inactive_color_offset = 1.0
+  title_inactive_bg_color = "#c0c0c0"
+  title_receive_bg_color = "#b54036"
+  title_transmit_bg_color = "#3f94a8"
+  window_state = fullscreen
+[keybindings]
+  broadcast_all = <Primary><Shift><Alt>b
+  broadcast_group = <Primary><Shift><Alt>g
+  broadcast_off = <Primary><Shift><Alt>c
+  insert_number = <Primary><Shift><Alt>i
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default-old]]
+    audible_bell = True
+    background_color = "#1c1e22"
+    background_darkness = 0.9
+    background_image = None
+    background_type = transparent
+    cursor_color = "#f6f7ec"
+    font = Monaco 12
+    foreground_color = "#e6e8ef"
+    palette = "#23252b:#b54036:#5ab977:#deb566:#6a7c93:#a4799d:#3f94a8:#e6e8ef:#23252b:#b54036:#5ab977:#deb566:#6a7c93:#a4799d:#3f94a8:#ebedf2"
+    scroll_on_output = False
+    scrollback_infinite = True
+    use_system_font = False
+  [[Afterglow]]
+    background_color = "#212121"
+    background_darkness = 0.77
+    background_image = None
+    cursor_color = "#d0d0d0"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#d0d0d0"
+    palette = "#151515:#ac4142:#7e8e50:#e5b567:#6c99bb:#9f4e85:#7dd6cf:#d0d0d0:#505050:#ac4142:#7e8e50:#e5b567:#6c99bb:#9f4e85:#7dd6cf:#f5f5f5"
+    scrollback_infinite = True
+    use_system_font = False
+  [[Birds-Of-Paradise]]
+    background_color = "#2a1f1d"
+    background_darkness = 0.77
+    background_image = None
+    cursor_color = "#573d26"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#e0dbb7"
+    palette = "#573d26:#be2d26:#6ba18a:#e99d2a:#5a86ad:#ac80a6:#74a6ad:#e0dbb7:#9b6c4a:#e84627:#95d8ba:#d0d150:#b8d3ed:#d19ecb:#93cfd7:#fff9d5"
+    scrollback_infinite = True
+    use_system_font = False
+  [[Code]]
+    background_image = None
+    cursor_color = "#52ff00"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#ffffff"
+    palette = "#2e3436:#cc0000:#66a827:#c4a000:#3f84dc:#be3ad4:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    scroll_on_output = False
+    scrollback_infinite = True
+    use_system_font = False
+  [[Neutron]]
+    background_color = "#1c1e22"
+    background_darkness = 0.9
+    background_image = None
+    background_type = transparent
+    cursor_color = "#f6f7ec"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#e6e8ef"
+    palette = "#23252b:#b54036:#5ab977:#deb566:#6a7c93:#a4799d:#3f94a8:#e6e8ef:#23252b:#b54036:#5ab977:#deb566:#6a7c93:#a4799d:#3f94a8:#ebedf2"
+    scroll_on_output = False
+    scrollback_infinite = True
+    use_system_font = False
+  [[blue]]
+    background_image = None
+    cursor_color = "#60bbff"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#0091ff"
+    scrollback_infinite = True
+    use_system_font = False
+  [[good-ol-default]]
+    background_darkness = 0.6
+    background_image = None
+    background_type = transparent
+    cursor_color = "#3bff00"
+    font = Ubuntu Mono derivative Powerline 12
+    foreground_color = "#ffffff"
+    palette = "#000000:#aa0000:#007300:#aa5500:#549dff:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#b2d4f8:#ff55ff:#55ffff:#ffffff"
+    scroll_on_output = False
+    scrollback_infinite = True
+    use_system_font = False
+  [[default]]
+    scrollbar_position=disabled
+    background_color = "#002b36"
+    background_image = None
+    cursor_color = "#eee8d5"
+    font = Monaco 12
+    foreground_color = "#eee8d5"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_system_font = False
