@@ -1,30 +1,20 @@
 execute pathogen#infect()
 syntax enable
 set background=dark
-colorscheme herald 
+colorscheme solarized
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 let python_highlight_all=1
 
-" set colorcolumn=80
-" set nofoldenable    " disable folding
 set laststatus=2
 set statusline+=%F
 set updatetime=250
 set relativenumber
-
-" Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 hi CursorLineNr guifg=#050505
 set number
@@ -53,3 +43,5 @@ nmap <C-c> :.w! ~/.vimbuffer<CR>
 " paste from buffer
 map <C-p> :r ~/.vimbuffer<CR>
 
+autocmd BufWritePost *.py call Flake8()
+filetype plugin on
