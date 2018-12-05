@@ -1,20 +1,16 @@
 execute pathogen#infect()
-syntax enable
+syntax on
 set background=dark
-colorscheme solarized
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-
-nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+colorscheme atom-dark-256
 
 let python_highlight_all=1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='zenburn'
 
-set laststatus=2
-set statusline+=%F
-set updatetime=250
-set relativenumber
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 hi CursorLineNr guifg=#050505
 set number
@@ -30,8 +26,7 @@ set backspace=indent,eol,start
 
 " Highlight all search results
 set hlsearch
-hi Search   cterm=BOLD  ctermfg=NONE    ctermbg=white
-hi IncSearch    cterm=BOLD  ctermfg=NONE    ctermbg=red
+hi Search   cterm=BOLD  ctermfg=NONE    ctermbg=DarkGrey
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
@@ -42,6 +37,3 @@ nmap <C-c> :.w! ~/.vimbuffer<CR>
 
 " paste from buffer
 map <C-p> :r ~/.vimbuffer<CR>
-
-autocmd BufWritePost *.py call Flake8()
-filetype plugin on
