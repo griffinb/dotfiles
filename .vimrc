@@ -1,16 +1,16 @@
 execute pathogen#infect()
 syntax on
 set background=dark
-colorscheme atom-dark-256
+set termguicolors
+colorscheme material-monokai
+" colorscheme atom-dark-256
+
+" Setting this will make sure vim-gitgutter is aware of changes quickly.
+set updatetime=125
 
 let python_highlight_all=1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='zenburn'
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 hi CursorLineNr guifg=#050505
 set number
@@ -37,3 +37,6 @@ nmap <C-c> :.w! ~/.vimbuffer<CR>
 
 " paste from buffer
 map <C-p> :r ~/.vimbuffer<CR>
+
+let g:materialmonokai_italic=1
+let g:airline_theme='materialmonokai'
